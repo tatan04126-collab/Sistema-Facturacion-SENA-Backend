@@ -1,6 +1,7 @@
 from flask import Flask
 from src.models import Base,engine
 from src.models.Categories import Categories
+from src.models.Inventories import Inventories
 
 app = Flask (__name__)
 
