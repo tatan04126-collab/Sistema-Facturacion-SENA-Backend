@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from src.models import Base
+from src.models import Base, session
 
 
 class Categories(Base):
@@ -13,3 +13,11 @@ class Categories(Base):
 
     def __repr__(self):
         return f"<category(id={self.id}, name='{self.name}')>"
+
+    def get ():
+        categories = session.query(Categories).all()
+        return categories
+
+    def save(self):
+        session.add(self)
+        session.commit()

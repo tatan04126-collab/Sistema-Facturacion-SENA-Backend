@@ -2,8 +2,11 @@ from flask import Flask
 from src.models import Base,engine
 from src.models.Categories import Categories
 from src.models.Inventories import Inventories
+from src.routes.Categories_routes import Categories_bp
 
 app = Flask (__name__)
+
+app.register_blueprint(Categories_bp)
 
 Base.metadata.create_all(engine)
 
